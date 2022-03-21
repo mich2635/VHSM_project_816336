@@ -34,7 +34,7 @@ public class AdminDao {
 	 * @return
 	 */
 	public AdminDTO update(AdminDTO admin, String newPassword) throws Exception{
-		Query query = entityManager.createNativeQuery("SELECT id FROM Admin_info WHERE user_name=? AND password =?");
+		Query query = entityManager.createNativeQuery("SELECT id FROM admin_info WHERE user_name=? AND password =?");
 		query.setParameter(1, admin.getUserName());
 		query.setParameter(2, admin.getPassword());
 		int id = Integer.parseInt(query.getSingleResult().toString());
